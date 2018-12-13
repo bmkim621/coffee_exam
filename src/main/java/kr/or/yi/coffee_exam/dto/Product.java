@@ -1,4 +1,4 @@
-package coffee_exam.dto;
+package kr.or.yi.coffee_exam.dto;
 
 public class Product {
 	private String code;
@@ -9,12 +9,10 @@ public class Product {
 	}
 
 	public Product(String code) {
-		super();
 		this.code = code;
 	}
 	
 	public Product(String code, String name) {
-		super();
 		this.code = code;
 		this.name = name;
 	}

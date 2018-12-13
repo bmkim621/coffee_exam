@@ -1,4 +1,4 @@
-package coffee_exam.dto;
+package kr.or.yi.coffee_exam.dto;
 
 public class Sale {
 	private int no;
@@ -15,16 +15,9 @@ public class Sale {
 	public Sale() {
 		// TODO Auto-generated constructor stub
 	}
-
 	
-	public Sale(Product product) {
-		super();
-		this.product = product;
-	}
-
 	public Sale(int no, Product product, int price, int saleCnt, int marginRate, int supplyPrice, int addTax,
 			int salePrice, int marginPrice, int rank) {
-		super();
 		this.no = no;
 		this.product = product;
 		this.price = price;
@@ -34,6 +27,35 @@ public class Sale {
 		this.addTax = addTax;
 		this.salePrice = salePrice;
 		this.marginPrice = marginPrice;
+		this.rank = rank;
+	}
+
+	public Sale(int no, Product product, int price, int saleCnt, int marginRate) {
+		this.no = no;
+		this.product = product;
+		this.price = price;
+		this.saleCnt = saleCnt;
+		this.marginRate = marginRate;
+	}
+
+	public Sale(int no, Product product, int price, int saleCnt, int marginRate, int supplyPrice, int addTax,
+			int salePrice, int marginPrice) {
+		this.no = no;
+		this.product = product;
+		this.price = price;
+		this.saleCnt = saleCnt;
+		this.marginRate = marginRate;
+		this.supplyPrice = supplyPrice;
+		this.addTax = addTax;
+		this.salePrice = salePrice;
+		this.marginPrice = marginPrice;
+	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
 		this.rank = rank;
 	}
 
@@ -109,21 +131,10 @@ public class Sale {
 		this.marginPrice = marginPrice;
 	}
 
-	public int getRank() {
-		return rank;
-	}
-
-	public void setRank(int rank) {
-		this.rank = rank;
-	}
-
 	@Override
 	public String toString() {
 		return String.format(
-				"%s, %s, %s, %s, %s, %s, %s, %s, %s, %s",
-				no, product, price, saleCnt, marginRate, supplyPrice, addTax, salePrice, marginPrice, rank);
+				"Sale [no=%s, product=%s, price=%s, saleCnt=%s, marginRate=%s, supplyPrice=%s, addTax=%s, salePrice=%s, marginPrice=%s]",
+				no, product, price, saleCnt, marginRate, supplyPrice, addTax, salePrice, marginPrice);
 	}
-	
-	
-	
 }

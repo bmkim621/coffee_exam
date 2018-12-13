@@ -5,3 +5,13 @@ insert into product values
 ('B003', '팥빙수'), ('B004', '아이스초코');
 
 select * from product;
+
+select * from sale;
+
+insert into sale(code, price, sale_cnt, margin_rate) values
+('A001', 4500, 150, 10),
+('A002', 3800, 140, 15),
+('B001', 5200, 250, 12),
+('B002', 4300, 110, 11);
+
+call proc_order_price(true);

@@ -1,8 +1,8 @@
-package coffee_exam;
+package kr.or.yi.coffee_exam;
 
 import java.awt.EventQueue;
 
-import coffee_exam.ui.CoffeeManagementUI;
+import kr.or.yi.coffee_exam.ui.CoffeeManagementUI;
 
 public class Main {
 

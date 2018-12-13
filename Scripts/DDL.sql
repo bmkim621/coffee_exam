@@ -24,12 +24,7 @@ CREATE TABLE `ncs_product`.`sale` (
 	`code`         CHAR(4) NOT NULL COMMENT '제품코드', -- 제품코드
 	`price`        int(11) NOT NULL COMMENT '제품단가', -- 제품단가
 	`sale_cnt`     int(11) NOT NULL COMMENT '판매수량', -- 판매수량
-	`supply_price` int(11) NOT NULL COMMENT '공급가액', -- 공급가액
-	`add_tax`      int(11) NOT NULL COMMENT '부가세액', -- 부가세액
-	`sale_price`   int(11) NOT NULL COMMENT '판매세액', -- 판매세액
-	`margin_rate`  int(5)  NOT NULL COMMENT '마진율', -- 마진율
-	`margin_price` int(11) NOT NULL COMMENT '마진액', -- 마진액
-	`rank`         int(5)  NOT NULL COMMENT '순위' -- 순위
+	`margin_rate`  int(5)  NOT NULL COMMENT '마진율' -- 마진율
 )
 COMMENT '판매';
 
@@ -39,6 +34,9 @@ ALTER TABLE `ncs_product`.`sale`
 		PRIMARY KEY (
 			`no` -- 순서
 		);
+
+ALTER TABLE `ncs_product`.`sale`
+	MODIFY COLUMN `no` int(10) NOT NULL AUTO_INCREMENT COMMENT '순서';
 
 -- 판매
 ALTER TABLE `ncs_product`.`sale`
