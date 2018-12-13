@@ -8,10 +8,8 @@ select * from product;
 
 select * from sale;
 
-insert into sale(code, price, sale_cnt, margin_rate) values
+insert into sale(code, price, saleCnt, marginRate) values
 ('A001', 4500, 150, 10),
 ('A002', 3800, 140, 15),
 ('B001', 5200, 250, 12),
 ('B002', 4300, 110, 11);
-
-call proc_order_price(true);

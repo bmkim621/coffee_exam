@@ -35,8 +35,6 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return String.format("%s, %s", code, name);
-	}
-	
-	
+		return String.format("Product [code=%s, name=%s]", code, name);
+	}	
 }

@@ -6,16 +6,25 @@ public class Sale {
 	private int price;
 	private int saleCnt;
 	private int marginRate;
+	// 공급가액, 부가세액, 판매금액, 마진액
 	private int supplyPrice;
 	private int addTax;
 	private int salePrice;
 	private int marginPrice;
 	private int rank;
-	
+
 	public Sale() {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Sale(int no, Product product, int price, int saleCnt, int marginRate) {
+		this.no = no;
+		this.product = product;
+		this.price = price;
+		this.saleCnt = saleCnt;
+		this.marginRate = marginRate;
+	}
+
 	public Sale(int no, Product product, int price, int saleCnt, int marginRate, int supplyPrice, int addTax,
 			int salePrice, int marginPrice, int rank) {
 		this.no = no;
@@ -30,32 +39,18 @@ public class Sale {
 		this.rank = rank;
 	}
 
-	public Sale(int no, Product product, int price, int saleCnt, int marginRate) {
-		this.no = no;
-		this.product = product;
-		this.price = price;
-		this.saleCnt = saleCnt;
-		this.marginRate = marginRate;
-	}
-
-	public Sale(int no, Product product, int price, int saleCnt, int marginRate, int supplyPrice, int addTax,
-			int salePrice, int marginPrice) {
-		this.no = no;
-		this.product = product;
-		this.price = price;
-		this.saleCnt = saleCnt;
-		this.marginRate = marginRate;
+	public Sale(int supplyPrice, int addTax, int salePrice, int marginPrice) {
 		this.supplyPrice = supplyPrice;
 		this.addTax = addTax;
 		this.salePrice = salePrice;
 		this.marginPrice = marginPrice;
 	}
 
-	public int getRank() {
-		return rank;
-	}
-
-	public void setRank(int rank) {
+	public Sale(int supplyPrice, int addTax, int salePrice, int marginPrice, int rank) {
+		this.supplyPrice = supplyPrice;
+		this.addTax = addTax;
+		this.salePrice = salePrice;
+		this.marginPrice = marginPrice;
 		this.rank = rank;
 	}
 
@@ -131,10 +126,18 @@ public class Sale {
 		this.marginPrice = marginPrice;
 	}
 
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
 	@Override
 	public String toString() {
 		return String.format(
-				"Sale [no=%s, product=%s, price=%s, saleCnt=%s, marginRate=%s, supplyPrice=%s, addTax=%s, salePrice=%s, marginPrice=%s]",
-				no, product, price, saleCnt, marginRate, supplyPrice, addTax, salePrice, marginPrice);
+				"Sale [no=%s, product=%s, price=%s, saleCnt=%s, marginRate=%s, supplyPrice=%s, addTax=%s, salePrice=%s, marginPrice=%s, rank=%s]",
+				no, product, price, saleCnt, marginRate, supplyPrice, addTax, salePrice, marginPrice, rank);
 	}
 }
